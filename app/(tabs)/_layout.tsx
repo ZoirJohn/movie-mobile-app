@@ -35,12 +35,15 @@ const _Layout = () => {
 					backgroundColor: "#0F0D23",
 					marginHorizontal: 20,
 					marginBottom: 36,
-					height: 50,
+					paddingHorizontal: 9.5,
+					height: 55,
 					position: "absolute",
 					overflow: "hidden",
 					borderRadius: 50,
-					borderWidth: 1,
 					borderColor: "0F0D23",
+				},
+				tabBarIconStyle: {
+					marginTop: 9,
 				},
 			}}
 		>
@@ -49,9 +52,6 @@ const _Layout = () => {
 				options={{
 					headerShown: false,
 					tabBarIcon: ({ focused }) => <TabIcon focused={focused} icon={icons.home} title="Home" />,
-					tabBarIconStyle: {
-						marginTop: 10,
-					},
 				}}
 			/>
 			<Tabs.Screen
@@ -59,9 +59,6 @@ const _Layout = () => {
 				options={{
 					headerShown: false,
 					tabBarIcon: ({ focused }) => <TabIcon focused={focused} icon={icons.search} title="Search" />,
-					tabBarIconStyle: {
-						marginTop: 10,
-					},
 				}}
 			/>
 			<Tabs.Screen
@@ -69,9 +66,6 @@ const _Layout = () => {
 				options={{
 					headerShown: false,
 					tabBarIcon: ({ focused }) => <TabIcon focused={focused} icon={icons.person} title="Profile" />,
-					tabBarIconStyle: {
-						marginTop: 10,
-					},
 				}}
 			/>
 			<Tabs.Screen
@@ -79,9 +73,6 @@ const _Layout = () => {
 				options={{
 					headerShown: false,
 					tabBarIcon: ({ focused }) => <TabIcon focused={focused} icon={icons.save} title="Saved" />,
-					tabBarIconStyle: {
-						marginTop: 10,
-					},
 				}}
 			/>
 		</Tabs>
