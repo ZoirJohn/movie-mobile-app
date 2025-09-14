@@ -6,8 +6,8 @@ export const TMDB_CONFIG = {
 		Authorization: `Bearer ${process.env.EXPO_PUBLIC_API_KEY}`,
 	},
 };
-export const fetchPopularMovies = async ({ query }: { query: string }) => {
-	const endpoint = "/discover/movie?sort_by=popularity.desc";
+export const fetchMovies = async ({ query }: { query: string }) => {
+	const endpoint = query ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}` : `${TMDB_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
 	const response = await fetch(endpoint, {
 		method: "GET",
@@ -17,4 +17,6 @@ export const fetchPopularMovies = async ({ query }: { query: string }) => {
 		throw new Error("Failed to fetch movies", response.statusText as ErrorOptions);
 	}
 	const data = await response.json();
+
+	return data.results;
 };
