@@ -1,13 +1,12 @@
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { Tabs } from "expo-router";
-import React from "react";
 import { Image, ImageBackground, ImageSourcePropType, Text, View } from "react-native";
 
 const TabIcon = ({ focused, icon, title }: { focused: boolean; icon: ImageSourcePropType; title: string }) => {
 	if (focused) {
 		return (
-			<ImageBackground source={images.highlight} className="flex flex-row w-full flex-1 min-w-[110px] min-h-[53px] justify-center items-center overflow-hidden rounded-full border">
+			<ImageBackground source={images.highlight} className="flex flex-row w-full flex-1 min-w-[110px] min-h-[53px] justify-center items-center overflow-hidden rounded-full">
 				<Image source={icon} className="size-5" tintColor="#151312" />
 				<Text className="ml-2 text-secondary text-base font-semibold">{title}</Text>
 			</ImageBackground>
@@ -34,6 +33,7 @@ const _Layout = () => {
 					position: "absolute",
 					overflow: "hidden",
 					borderRadius: 50,
+					borderTopWidth: 0,
 				},
 				tabBarItemStyle: {
 					marginTop: 6,
