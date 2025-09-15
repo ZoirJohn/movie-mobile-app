@@ -13,10 +13,10 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie
 				</Text>
 				<View className="flex-row items-center gap-x-1 mb-1">
 					<Image source={icons.star} className="size-4" />
-					<Text className="text-xs text-white font-bold uppercase">{Math.round(vote_average)}</Text>
+					<Text className="text-xs text-white font-bold uppercase">{vote_average?.toFixed(1)}</Text>
 				</View>
 				<View className="flex-row justify-between items-center">
-					<Text className="text-xs text-secondaryText font-medium mt-1">{release_date.split("-")[0]}</Text>
+					<Text className="text-xs text-secondaryText font-medium mt-1">{release_date?.split("-")[0]}</Text>
 					<Text className="text-xs text-secondaryText font-medium mt-1">Movie</Text>
 				</View>
 			</TouchableOpacity>
