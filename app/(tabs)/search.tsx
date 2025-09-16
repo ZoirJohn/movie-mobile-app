@@ -3,8 +3,9 @@ import SearchBar from "@/components/searchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { fetchMovies } from "@/services/api";
+import { updateSearchCount } from "@/services/appwrite";
 import useFetch from "@/services/useFetch";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { View, Image, FlatList, ActivityIndicator, Text } from "react-native";
 
 const Search = () => {
@@ -14,12 +15,16 @@ const Search = () => {
 		const timeoutId = setTimeout(async () => {
 			if (searchQuery.trim()) {
 				await loadMovies();
+				if (movies?.length && movies?.[0]) {
+					await updateSearchCount(searchQuery, movies[0]);
+				}
 			} else {
 				reset();
 			}
 		}, 1000);
 		return () => clearTimeout(timeoutId);
 	}, [searchQuery]);
+
 	return (
 		<View className="flex-1 bg-primary">
 			<Image

@@ -5,14 +5,27 @@ import { icons } from "@/constants/icons";
 
 const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie) => {
 	return (
-		<Link href={`/movies/${id}`} asChild>
+		<Link
+			href={`/movies/${id}`}
+			asChild
+		>
 			<TouchableOpacity className="w-[30%]">
-				<Image source={{ uri: poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : `https://placehold.co/600x400/EEE/31343C` }} className="w-full h-52 rounded-lg" resizeMode="cover" />
-				<Text className="text-sm font-bold text-white" numberOfLines={1}>
+				<Image
+					source={{ uri: poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : `https://placehold.co/600x400/000000/000.png` }}
+					className="w-full h-52 rounded-lg"
+					resizeMode="cover"
+				/>
+				<Text
+					className="text-sm font-bold text-white"
+					numberOfLines={1}
+				>
 					{title}
 				</Text>
 				<View className="flex-row items-center gap-x-1 mb-1">
-					<Image source={icons.star} className="size-4" />
+					<Image
+						source={icons.star}
+						className="size-4"
+					/>
 					<Text className="text-xs text-white font-bold uppercase">{vote_average?.toFixed(1)}</Text>
 				</View>
 				<View className="flex-row justify-between items-center">
