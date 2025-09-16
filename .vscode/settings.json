@@ -10,7 +10,7 @@
 
 	"prettier.singleQuote": false,
 	"prettier.jsxSingleQuote": false,
-	"prettier.tabWidth": 8,
+	"prettier.tabWidth": 4,
 	"prettier.useTabs": true,
 
 	"javascript.preferences.quoteStyle": "double",

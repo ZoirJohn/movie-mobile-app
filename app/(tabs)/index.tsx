@@ -13,7 +13,7 @@ const Index = () => {
 	const router = useRouter();
 	const { data: movies, error: moviesError, loading: moviesLoading } = useFetch(() => fetchMovies({ query: "" }));
 	const { data: trendingMovies, error: trendingMoviesError, loading: trendingMoviesLoading } = useFetch(() => getTrendingMovies());
-	
+
 	return (
 		<View className="flex-1 bg-primary">
 			<Image
