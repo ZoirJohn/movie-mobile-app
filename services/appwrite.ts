@@ -18,3 +18,9 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
 		throw error;
 	}
 };
+
+export const getTrendingMovies = async () => {
+	try {
+		const result = (await database.listRows(process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!, process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID!)).rows.map((row) => row.title);
+	} catch (error) {}
+};

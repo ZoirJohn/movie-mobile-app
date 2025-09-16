@@ -6,10 +6,14 @@ import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchMovies } from "@/services/api";
 import MovieCard from "@/components/movieCard";
+import { useEffect } from "react";
+import { getTrendingMovies } from "@/services/appwrite";
 
 const Index = () => {
 	const router = useRouter();
 	const { data: movies, error: moviesError, loading: moviesLoading } = useFetch(() => fetchMovies({ query: "" }));
+	const { data: trendingMovies, error: trendingMoviesError, loading: trendingMoviesLoading } = useFetch(() => getTrendingMovies());
+	
 	return (
 		<View className="flex-1 bg-primary">
 			<Image
