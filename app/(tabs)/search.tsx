@@ -22,13 +22,10 @@ const Search = () => {
 		return () => clearTimeout(timeoutId);
 	}, [searchQuery]);
 	useEffect(() => {
-		async function updateSearch() {
-			if (movies?.length && movies?.[0]) {
-				await updateSearchCount(searchQuery, movies[0]);
-			}
+		if (movies?.length && movies?.[0] && searchQuery.trim()) {
+			updateSearchCount(searchQuery, movies[0]);
 		}
-		updateSearch();
-	}, [searchQuery]);
+	}, [movies]);
 	return (
 		<View className="flex-1 bg-primary">
 			<Image
