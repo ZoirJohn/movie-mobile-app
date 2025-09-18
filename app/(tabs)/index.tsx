@@ -57,11 +57,11 @@ const Index = () => {
 								showsHorizontalScrollIndicator={false}
 								contentContainerStyle={{
 									gap: 30,
+									marginBottom: 30,
 								}}
 							/>
 						</>
 					)}
-
 					<Text className="text-lg text-white font-bold mt-5 mb-3">Latest Movies</Text>
 					<FlatList
 						data={movies}

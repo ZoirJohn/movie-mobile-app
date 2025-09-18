@@ -10,9 +10,9 @@ const TrendingMoviesCard = ({ movie: { movie_id, title, poster_url }, index }: T
 			href={`/movies/${movie_id}`}
 			asChild
 		>
-			<TouchableOpacity className="w-32 relative pl-4">
+			<TouchableOpacity className="w-40 relative pl-4">
 				<Image
-					className="w-32 h-48 rounded-lg"
+					className="w-40 h-56 rounded-lg"
 					resizeMode="cover"
 					source={{ uri: poster_url || `https://placehold.co/600x400/000000/000.png` }}
 				></Image>
