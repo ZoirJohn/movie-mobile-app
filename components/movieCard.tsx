@@ -11,7 +11,7 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie
 		>
 			<TouchableOpacity className="w-[30%]">
 				<Image
-					source={{ uri: poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : `https://placehold.co/600x400/000000/000.png` }}
+					source={{ uri: poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : "https://placehold.co/600x400/000000/000.png" }}
 					className="w-full h-52 rounded-lg"
 					resizeMode="cover"
 				/>

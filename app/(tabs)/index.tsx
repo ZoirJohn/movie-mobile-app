@@ -57,7 +57,7 @@ const Index = () => {
 								showsHorizontalScrollIndicator={false}
 								contentContainerStyle={{
 									gap: 30,
-									marginBottom: 30,
+									marginBottom: 10,
 								}}
 							/>
 						</>
